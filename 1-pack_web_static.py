@@ -1,11 +1,11 @@
 #!/usr/bin/python3
+
 from fabric.api import local
 from time import strftime
 from datetime import date
 
-
 def do_pack():
-    """ A script that generates archive the contents of web_static folder"""
+    """this generates archive the contents of web_static folder"""
 
     filename = strftime("%Y%m%d%H%M%S")
     try:
