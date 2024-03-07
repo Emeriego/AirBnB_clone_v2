@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 from fabric.api import put, run, local, env
 from time import strftime
 from datetime import date
@@ -7,12 +6,8 @@ from os import path
 
 env.hosts = ["54.86.24.142", "52.90.23.36"]
 
-
 def do_pack():
-    """
-    This script generates archive of the
-    contents of web_static folder
-    """
+    """ A script that generates archive the contents of web_static folder"""
 
     filename = strftime("%Y%m%d%H%M%S")
     try:
@@ -27,10 +22,8 @@ def do_pack():
 
 
 def do_deploy(archive_path):
-    """
-    THis Fabric script distributes
-    an archive to all included web servers
-    """
+    """Fabric script that distributes
+    an archive to your web server"""
 
     if not path.exists(archive_path):
         return False
@@ -57,7 +50,7 @@ def do_deploy(archive_path):
 
 
 def deploy():
-    """run the 2 functions i.e pack it and deploy"""
+    """run the 2 functions"""
 
     path = do_pack()
     if not path:
